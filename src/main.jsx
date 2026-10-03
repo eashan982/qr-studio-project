@@ -863,21 +863,22 @@ function App() {
             </div>
 
             <div className="stage">
-              {error ? (
-                <div className="empty">
-                  QR preview
-                  <br />
-                  <small>Enter valid information</small>
-                </div>
-              ) : (
-                <div
-                  ref={stageRef}
-                  className="qr-render"
-                />
-              )}
+  <div
+    ref={stageRef}
+    className="qr-render"
+    style={{ display: error ? 'none' : 'flex' }}
+  />
 
-              <span className="live">● LIVE</span>
-            </div>
+  {error && (
+    <div className="empty">
+      QR preview
+      <br />
+      <small>Enter valid information</small>
+    </div>
+  )}
+
+  <span className="live">● LIVE</span>
+</div>
 
             <div className="meta">
               <div>
